@@ -28,7 +28,7 @@ class ChangeRequest extends Model
     public function submitter()     { return $this->belongsTo(User::class, 'submitted_by'); }
     public function reviewer()      { return $this->belongsTo(User::class, 'reviewer_id'); }
     public function approver()      { return $this->belongsTo(User::class, 'approver_id'); }
-    public function auditLogs()     { return $this->hasMany(AuditLog::class, 'resource_id')->where('event_type','approval'); }
+    public function auditLogs()     { return $this->hasMany(AuditLog::class, 'resource_id')->whereIn('event_type', ['approval', 'deployment']); }
 
     public function isPending()    { return $this->status === 'pending'; }
     public function isApproved()   { return $this->status === 'approved'; }

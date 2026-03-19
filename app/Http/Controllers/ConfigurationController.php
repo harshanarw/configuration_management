@@ -12,8 +12,10 @@ class ConfigurationController extends Controller
         $query = Configuration::with(['creator','lastModifier']);
 
         if ($request->search) {
-            $query->where('name','like','%'.$request->search.'%')
-                  ->orWhere('description','like','%'.$request->search.'%');
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'like', '%'.$request->search.'%')
+                  ->orWhere('description', 'like', '%'.$request->search.'%');
+            });
         }
         if ($request->environment) $query->where('environment', $request->environment);
         if ($request->status)      $query->where('status', $request->status);
