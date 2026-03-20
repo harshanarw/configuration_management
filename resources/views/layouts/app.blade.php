@@ -227,6 +227,7 @@
             font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.05em;
         }
         .status-pending   { background: rgba(244,162,97,0.15); color: var(--warning); border: 1px solid rgba(244,162,97,0.3); }
+        .status-reviewing { background: rgba(0,180,216,0.10);  color: #60c6e0;        border: 1px solid rgba(0,180,216,0.25); }
         .status-approved  { background: rgba(42,157,143,0.15); color: var(--success); border: 1px solid rgba(42,157,143,0.3); }
         .status-rejected  { background: rgba(230,57,70,0.15);  color: var(--danger);  border: 1px solid rgba(230,57,70,0.3); }
         .status-deployed  { background: rgba(0,180,216,0.12);  color: var(--accent);  border: 1px solid rgba(0,180,216,0.3); }

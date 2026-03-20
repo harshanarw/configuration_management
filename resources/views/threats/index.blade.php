@@ -28,7 +28,6 @@
         ['T11','Tampering with Logs','Audit & Logging Service','Attacker modifies or deletes logs to cover their tracks.','WORM storage system. Cryptographic hash chains on log entries.','critical','audit','mitigated'],
         ['T12','Repudiation','Audit & Logging Service','System cannot prove a user took an action.','Secure logging with user ID, timestamp, and cryptographic hash log chains.','high','audit','mitigated'],
     ];
-    $critical = collect($threats)->where(2, 'critical')->count() + collect($threats)->where(fn($t)=>$t[6]==='critical',true)->count();
     @endphp
 
     @foreach([

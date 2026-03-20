@@ -40,7 +40,7 @@ class ApprovalController extends Controller
     public function show(ChangeRequest $changeRequest)
     {
         $changeRequest->load(['configuration','submitter','reviewer','approver','auditLogs.user']);
-        return view('approvals.show', ['request' => $changeRequest]);
+        return view('approvals.show', ['changeRequest' => $changeRequest]);
     }
 
     /** Level 1 — Reviewer action — FR3.2 */
