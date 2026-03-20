@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/configurations/{configuration}/version/{versionId}', [ConfigurationController::class, 'version'])->name('configurations.version');
 
     // Approval Workflow — FR3.1, FR3.2, FR3.3
-    Route::resource('approvals', ApprovalController::class)->only(['index','show']);
+    Route::resource('approvals', ApprovalController::class)->only(['index','show'])->parameters(['approvals' => 'changeRequest']);
     Route::post('/approvals/{changeRequest}/review',  [ApprovalController::class, 'review'])->name('approvals.review');
     Route::post('/approvals/{changeRequest}/approve', [ApprovalController::class, 'approve'])->name('approvals.approve');
 
