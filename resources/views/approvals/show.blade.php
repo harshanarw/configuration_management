@@ -20,7 +20,7 @@
                         ['Config File', $changeRequest->configuration->name ?? '—', 'file-code'],
                         ['Environment', ucfirst($changeRequest->configuration->environment ?? '—'), 'globe'],
                         ['Submitted By', $changeRequest->submitter->name ?? '—', 'person'],
-                        ['Submitted At', $changeRequest->created_at->format('d M Y H:i'), 'clock'],
+                        ['Submitted At', $changeRequest->created_at?->format('d M Y H:i') ?? '—', 'clock'],
                     ] as [$label,$value,$icon])
                     <div class="col-6">
                         <div style="background:var(--bg-3);border:1px solid var(--border);border-radius:8px;padding:12px;">
